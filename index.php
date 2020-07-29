@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato%7cUbuntu" rel="stylesheet"> 
     
     <!-- Edit the name of your style sheet - 'foo' is not a valid name!! -->
-    <link rel="stylesheet" href="no_side.css"> 
+    <link rel="stylesheet" href="css/book_style.css"> 
     
 </head>
     
@@ -37,15 +37,12 @@
             
             <h1>Website Name</h1>
         </div>    <!-- / banner -->
-
-        <!-- Navigation goes here.  Edit BOTH the file name and the link name -->
-        <div class="box nav">
-            <a href="index.html">Home</a> | 
-            <a href="page1.html">Page 1</a> | 
-            <a href="page2.html">Page 2</a> | 
-            <a href="page3.html">Page 3</a> | 
-            <a href="contact.html">Contact</a>
-        </div>    <!-- / nav -->        
+        
+        <div class="side">
+        
+        <h2>Side Bar</h2>
+            <p>item go here</p>
+        </div>
         
         <div class="box main">
             <h2>First Page heading</h2>
