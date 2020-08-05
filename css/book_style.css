@@ -27,19 +27,18 @@ body {
 
 .box {
     padding: 20px;
-    /* border-radius: 10px; */
-    background-color: #ddd;
-}
+    border-radius: 10px; 
+    }
 
 /* Area colouring... */
 
 /* logo, banner and footer background are the same */
-.logo, .banner, .side, .footer {
-    background-color: #888;  /* dark grey */
+.logo, .banner, .footer {
+    background-color: #1d3557;  /* dark blue */
 }
 
 /* Set font on dark areas to white */
-.logo, .banner, .side, .footer {
+.logo, .banner, .footer {
     color: #fff;
 }
 
@@ -64,14 +63,14 @@ body {
 
 .main {
     grid-area: main;
-    background-color: #EEE;  /* very pale grey */
-    border: solid 1px #CCC;
+    background-color: #a8dadc;  /* light blue */
+    border: solid 1px #45789d;  /* dark blue */
 }
 
 .side {
     grid-area: side;
-    background-color: #888;  /* dark grey */
-    padding: 0;
+    background-color: #f1faee;  /* creamy white */
+    border: solid 1px #45789d;  /* dark blue */
     float: left;
 }
 
@@ -87,17 +86,17 @@ h1, h2, h3, h4 {
     font-family: 'Ubuntu', sans-serif;
 }
 
-/* Navigation Links */
-.nav a {font-weight: bold;}
-.nav a:link, .nav a:visited {color: #AA0000;} /*dark red */
-.nav a:hover {color: #604830; text-decoration: none;} /* chocolate brown */
+/* Side Links */
+a.side{font-weight: bold; text-decoration: none;}
+a.side :link, a.side:visited {color: #f3c0d1;} /* pale pink */
+a.side :hover {color: #cecfd5;} /* pale blue */
 
 
 /* links in page */
 a {font-weight: bold;}
-a:link{color: #AA0000;} /*dark_red */
-a:visited{color: #111177;} /* dark blue */
-a:hover{color: #000;}    /* Black*/
+a:link{color: #45789d;} /*blue */
+a:visited{color: #a3a3a3;} /* mid grey */
+a:hover{color: #555555;}    /* dark blue*/
 
 
 /* Contact Form Styling */
