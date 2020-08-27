@@ -1,11 +1,11 @@
 <?php
     include "topbit.php";
-$showall_spl="SELECT *
+$showall_sql="SELECT *
 FROM `L1_prac_books`
 ORDER BY `L1_prac_books`.`Title` ASC";
 $showall_query=mysqli_query($dbconnect, $showall_sql);
 $showall_rs=mysqli_fetch_assoc($showall_query);
-$count=mysqli_num_rows($showall_query);\
+$count=mysqli_num_rows($showall_query);
     
 ?>
 
@@ -39,7 +39,7 @@ $count=mysqli_num_rows($showall_query);\
         ?>
     
         <!-- Results go here -->
-        <div class="results">
+        <div class= "results">
     
         <p>Title: <span class="sub_heading"><?php echo $showall_rs['Title']; ?></span></p>
         
@@ -69,7 +69,7 @@ $count=mysqli_num_rows($showall_query);\
     
     ?>    
       
-      <!-- / main --> 
+</div><!-- / main --> 
 <?php
     include "bottombit.php";
 ?>
