@@ -132,7 +132,11 @@ a:hover{color: #555555;}    /* dark blue*/
 } 
 
 
+/* form formatting */ 
 
+.search {
+    width: 200px;
+}
 
 
 
