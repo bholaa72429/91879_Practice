@@ -10,7 +10,7 @@
       
         <form method="post" action="title_search.php" enctype="multipart/form-data">
         
-            <input class="search" type="text" size="40" value="" required placeholder="Title..." />
+            <input class="search" type="text" name="title" size="40" value="" required placeholder="Title..." />
             
             <input class="submit" type="submit" name="find_title" value="Search" />
             
