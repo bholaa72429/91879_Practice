@@ -5,13 +5,14 @@
 if(isset($_POST['find_title']))
     
 {
-
-$title = $_POST['title'];  
+// Retrieves title and sanitises it.
+$title=test_input(mysqli_real_escape_string($dbconnect,$_POST['title']));
+    
 
 $find_sql="SELECT *
 FROM `L1_prac_books`
 WHERE `Title` LIKE '%$title%'
-ORDER BY `L1_prac_books`.`Title` ASC";
+ORDER BY `Title` ASC";
 $find_query=mysqli_query($dbconnect, $find_sql);
 $find_rs=mysqli_fetch_assoc($find_query);
 $count=mysqli_num_rows($find_query);

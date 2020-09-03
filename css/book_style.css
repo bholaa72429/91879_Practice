@@ -131,6 +131,16 @@ a:hover{color: #555555;}    /* dark blue*/
     padding: 5px;
 } 
 
+/* Error Box formatting */ 
+.error {
+    background-color: #ffe0ed; /*pale pink*/
+    border: 2px solid #8a1737; /* dark red border */
+    color: #8a1737; /* dark red border */ 
+    border-radius: 5px;
+    padding: 20px;
+}
+
+
 
 /* form formatting */ 
 
