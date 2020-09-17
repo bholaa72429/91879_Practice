@@ -2,20 +2,37 @@
     include "topbit.php";
 
 // if find button pushed...
-if(isset($_POST['find_author']))
+if(isset($_POST['find_rating']))
     
 {
 // Retrieves author and sanitises it.
-$author=test_input(mysqli_real_escape_string($dbconnect,$_POST['author']));
-    
+$amount=test_input(mysqli_real_escape_string($dbconnect,$_POST['amount']));
+$stars=test_input(mysqli_real_escape_string($dbconnect,$_POST['stars']));
+      
+if ($amount=="exactly")  
 
-$find_sql="SELECT *
-FROM `L1_prac_books`
-WHERE `author` LIKE '%$author%'
-ORDER BY `Author` ASC";
-$find_query=mysqli_query($dbconnect, $find_sql);
-$find_rs=mysqli_fetch_assoc($find_query);
-$count=mysqli_num_rows($find_query);
+{
+   $findall_sql=$findall_sql="SELECT * FROM `L1_prac_books`WHERE `Rating` 
+   = $stars ORDER BY `L1_prac_books`.`Title` ASC  "; 
+}
+  
+elseif ($amount=="less")
+    
+{
+   $findall_sql=$findall_sql="SELECT * FROM `L1_prac_books`WHERE `Rating` 
+   <= $stars ORDER BY `L1_prac_books`.`Title` ASC  "; 
+}
+    
+else{
+    $findall_sql=$findall_sql="SELECT * FROM `L1_prac_books`WHERE `Rating` 
+   >= $stars ORDER BY `L1_prac_books`.`Title` ASC  ";
+}
+    
+ 
+    
+$findall_query=mysqli_query($dbconnect, $findall_sql);
+$findall_rs=mysqli_fetch_assoc($findall_query);
+$count=mysqli_num_rows($findall_query);
     
 ?>
 
@@ -51,16 +68,16 @@ $count=mysqli_num_rows($find_query);
         <!-- Results go here -->
         <div class= "results">
     
-        <p>Title: <span class="sub_heading"><?php echo $find_rs['Title']; ?></span></p>
+        <p>Title: <span class="sub_heading"><?php echo $findall_rs['Title']; ?></span></p>
         
-        <p>Author: <span class="sub_heading"><?php echo $find_rs['Author']; ?></span></p>
+        <p>Author: <span class="sub_heading"><?php echo $findall_rs['Author']; ?></span></p>
     
-        <p>Genre: <span class="sub_heading"><?php echo $find_rs['Genre']; ?></span></p>
+        <p>Genre: <span class="sub_heading"><?php echo $findall_rs['Genre']; ?></span></p>
          
         <p>Rating: <span class="sub_heading">
             
             <?php 
-            for ($x=0; $x <$find_rs['Rating']; $x++) 
+            for ($x=0; $x <$findall_rs['Rating']; $x++) 
                 
             {
                 echo "&#9733;";
@@ -73,7 +90,7 @@ $count=mysqli_num_rows($find_query);
         <p><span class="sub_heading">Review / Response</span></p>
         
         <p> 
-            <?php echo $find_rs['Review']; ?>
+            <?php echo $findall_rs['Review']; ?>
             
         </p>
         
@@ -85,7 +102,7 @@ $count=mysqli_num_rows($find_query);
             
         } // end of 'do'
         
-        while($find_rs=mysqli_fetch_assoc($find_query));
+        while($findall_rs=mysqli_fetch_assoc($findall_query));
         
     } // end else
      
