@@ -12,7 +12,7 @@
         
             <input class="search" type="text" name="title" size="40" value="" required placeholder="Title..." />
             
-            <input class="submit" type="submit" name="find_title" value="Search" />
+            <input class="submit" type="submit" name="find_title" value="&#xf002;" />
             
         </form>
       
@@ -25,7 +25,7 @@
         
             <input class="search" type="text" name="author" size="40" value="" required placeholder="Author..." />
             
-            <input class="submit" type="submit" name="find_author" value="Search" />
+            <input class="submit" type="submit" name="find_author" value="&#xf002;" />
             
         </form>
       
@@ -40,8 +40,7 @@
                <?php
                // retrieve unique value in genre column
                $genre_sql="SELECT DISTINCT `Genre`
-               FROM `L1_prac_books`
-               ORDER BY ORDER BY Genre ASC ";
+               FROM `L1_prac_books`ORDER BY Genre ASC ";
                $genre_query=mysqli_query($dbconnect,$genre_sql);
                $genre_rs=mysqli_fetch_assoc($genre_query);
                
@@ -63,7 +62,7 @@
               
            </select>
             
-           <input class="submit" type="submit" name="find_genre" value="Search" />
+           <input class="submit" type="submit" name="find_genre" value="&#xf002;" />
             
         </form>
       
@@ -84,13 +83,13 @@ enctype="multipart/form-data">
   <select class= "half_width" name="stars">
       <option value= 1>&#9733;</option>
       <option value= 2>&#9733;&#9733;</option> 
-      <option value= 3 selected>&#9733;&#9733;</option>
+      <option value= 3 selected>&#9733;&#9733;&#9733;</option>
       <option value= 4>&#9733;&#9733;&#9733;&#9733;</option>
       <option value= 5>&#9733;&#9733;&#9733;&#9733;&#9733;</option>
       
     </select>
 
-    <input type="submit" class="submit" name="find_rating" value="Search" />
+    <input type="submit" class="submit" name="find_rating" value="&#xf002;" />
       
    <!-- End of ratings -->   
     
